@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn-Style Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #1a1a2e;
+            color: #fff;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #ff9a8b, #ff6f61);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar h1 {
+            font-size: 24px;
+            color: #fff;
+        }
+        .navbar input {
+            padding: 8px;
+            width: 30%;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            gap: 40px;
+        }
+        .sidebar, .feed {
+            background: #252547;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            flex: 1;
+            max-width: 400px;
+        }
+        .profile-card img, .suggested-connections img, .post img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+        .profile-card {
+            text-align: center;
+            padding: 20px;
+        }
+        .profile-card button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            border: none;
+            background: #ff6f61;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .suggested-connections ul {
+            padding: 0;
+        }
+        .suggested-connections li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        .suggested-connections button {
+            padding: 5px 10px;
+            border: none;
+            background: #ff6f61;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .post-box {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .post-box textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .post-box button {
+            align-self: flex-end;
+            background: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 8px 12px;
+            margin-top: 5px;
+        }
+        .post {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 15px 0;
+            border-bottom: 1px solid #444;
+        }
+        .post-content {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <h1>SkillConnect</h1>
+        <input type="text" placeholder="Search for people, jobs, or posts...">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">My Network</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Messaging</a></li>
+                <li><a href="#">Notifications</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-card">
+                <img src="user.png" alt="Profile Picture">
+                <h3>John Doe</h3>
+                <p>Software Engineer | AI Enthusiast</p>
+                <button>View Profile</button>
+            </div>
+            <div class="suggested-connections">
+                <h2>Suggested Connections</h2>
+                <ul>
+                    <li>
+                        <img src="user.png" alt="User 1">
+                        <span>Jane Smith</span>
+                        <button>Connect</button>
+                    </li>
+                    <li>
+                        <img src="user.png" alt="User 2">
+                        <span>David Johnson</span>
+                        <button>Connect</button>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        
+        <main class="feed">
+            <div class="post-box">
+                <textarea placeholder="Share your thoughts..." rows="3"></textarea>
+                <button>Post</button>
+            </div>
+            <div class="post">
+                <img src="user.png" alt="User 3">
+                <div class="post-content">
+                    <h3>Emily White</h3>
+                    <p>Excited to share my new project on AI-driven chatbots!</p>
+                </div>
+            </div>
+            <div class="post">
+                <img src="user.png" alt="User 4">
+                <div class="post-content">
+                    <h3>Mark Brown</h3>
+                    <p>Looking for a front-end developer to collaborate on a startup idea. DM me!</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
