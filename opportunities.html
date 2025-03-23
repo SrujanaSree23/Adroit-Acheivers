@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill-Based Job Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .input-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .job-list {
+            margin-top: 20px;
+        }
+        .job-item {
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+        .job-item:hover {
+            transform: translateY(-3px);
+        }
+        .job-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .job-skills {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Find Jobs Based on Your Skills</h2>
+        <div class="input-container">
+            <input type="text" id="skillInput" placeholder="Enter your skills (comma separated)">
+            <button onclick="findJobs()">Find Jobs</button>
+        </div>
+        <div class="job-list" id="jobList"></div>
+    </div>
+
+    <script>
+        const jobs = [
+            { title: "Web Developer", skills: ["HTML", "CSS", "JavaScript"] },
+            { title: "Data Scientist", skills: ["Python", "Machine Learning", "Data Analysis"] },
+            { title: "Graphic Designer", skills: ["Photoshop", "Illustrator", "Creativity"] },
+            { title: "Cybersecurity Analyst", skills: ["Security", "Networking", "Ethical Hacking"] },
+            { title: "Software Engineer", skills: ["Java", "C++", "Problem Solving"] }
+        ];
+
+        function findJobs() {
+            const input = document.getElementById("skillInput").value.toLowerCase();
+            const skillArray = input.split(",").map(skill => skill.trim());
+            const jobList = document.getElementById("jobList");
+            jobList.innerHTML = "";
+
+            const filteredJobs = jobs.filter(job => 
+                job.skills.some(skill => skillArray.includes(skill.toLowerCase()))
+            );
+
+            if (filteredJobs.length > 0) {
+                filteredJobs.forEach(job => {
+                    const jobElement = document.createElement("div");
+                    jobElement.classList.add("job-item");
+                    jobElement.innerHTML = `<div class="job-title">${job.title}</div>
+                                           <div class="job-skills">Required Skills: ${job.skills.join(", ")}</div>`;
+                    jobList.appendChild(jobElement);
+                });
+            } else {
+                jobList.innerHTML = "<p style='text-align: center; color: #777;'>No jobs found for your skills.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

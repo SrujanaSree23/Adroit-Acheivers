@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Gigs Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .gig-list {
+            margin-top: 20px;
+        }
+        .gig-item {
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+        .gig-item:hover {
+            transform: translateY(-3px);
+        }
+        .gig-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .gig-description {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Find Gigs for Your Startup Idea</h2>
+        <div class="input-container">
+            <input type="text" id="startupName" placeholder="Enter your startup name">
+            <textarea id="ideaDescription" placeholder="Describe your startup idea"></textarea>
+            <button onclick="findGigs()">Find Gigs</button>
+        </div>
+        <div class="gig-list" id="gigList"></div>
+    </div>
+
+    <script>
+        const gigs = [
+            { title: "Tech Co-Founder", description: "Looking for a tech co-founder for a new AI startup." },
+            { title: "Marketing Specialist", description: "Need a marketing expert for an innovative ed-tech platform." },
+            { title: "UI/UX Designer", description: "Seeking a designer to create an intuitive dashboard for a fintech app." },
+            { title: "Sales Lead", description: "Startup requires a sales expert to expand its customer base." },
+            { title: "Investor Relations", description: "Looking for someone to handle investor communications and funding proposals." }
+        ];
+
+        function findGigs() {
+            const gigList = document.getElementById("gigList");
+            gigList.innerHTML = "";
+
+            gigs.forEach(gig => {
+                const gigElement = document.createElement("div");
+                gigElement.classList.add("gig-item");
+                gigElement.innerHTML = `<div class="gig-title">${gig.title}</div>
+                                       <div class="gig-description">${gig.description}</div>`;
+                gigList.appendChild(gigElement);
+            });
+        }
+    </script>
+</body>
+</html>
