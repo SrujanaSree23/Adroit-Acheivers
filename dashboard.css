@@ -1,0 +1,213 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: #F4F6F9;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10%;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Sidebar */
+.sidebar {
+    width: 180px;
+    background: #2C3E50;
+    color: white;
+    padding: 15px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    text-align: center;
+}
+
+/* Profile Icon */
+.profile-icon {
+    background: rgba(255, 255, 255, 0.2);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border-radius: 50%;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.profile-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+nav ul li {
+    padding: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+nav ul li:hover {
+    background: #34495E;
+}
+
+/* Main Content */
+.content {
+    margin-left: 200px;
+    padding: 20px;
+    width: calc(100% - 200px);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.signup-btn {
+    background: #4A67E2;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Quote Section */
+.quote-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.quote-section h1 {
+    font-size: 1.8em;
+    color: #2C3E50;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Search Box */
+.search-box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-box input {
+    width: 60%;
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #4A67E2;
+    border-radius: 5px;
+}
+
+.search-box button {
+    padding: 10px 15px;
+    background: #4A67E2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.about-box {
+    width: 48%;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-box h2 {
+    color: #2C3E50;
+}
+
+/* Chatbox Button */
+.chatbox-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4A67E2;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+/* Chatbox */
+.chatbox {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+}
+
+.chat-header {
+    background: #4A67E2;
+    color: white;
+    padding: 10px;
+    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-body {
+    padding: 10px;
+    height: 150px;
+    overflow-y: auto;
+}
+
+.chat-input {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    outline: none;
+}
+
+.card {
+    background: var(--white);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgb(255, 255, 255);
+    flex: 1;
+    transition: box-shadow 0.3s;
+}
